@@ -1,0 +1,26 @@
+server:
+  port: ${PORT:8095}
+  servlet.contextPath: /ehe
+
+# DB
+spring:
+  datasource:
+    url: ${appointment_db_url}
+    username: ${appointment_db_user}
+    password: ${appointment_db_pw}
+
+# Flyway
+  flyway:
+    url: ${appointment_db_url}
+    user: ${appointment_db_user}
+    password: ${appointment_db_pw}
+    validate-on-migrate: true
+    baseline-on-migrate: true
+
+# Mybatis ORM
+mybatis:
+  configuration:
+    mapUnderscoreToCamelCase: true
+    defaultFetchSize: 100
+    defaultStatementTimeout: 30
+
